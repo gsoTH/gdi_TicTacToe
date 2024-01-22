@@ -1,4 +1,4 @@
-# gdi_PointAndClick
+# gdi_TicTacToe
 Das vorliegende WindowsForms-Projekt soll TicTacToe mit GDI+ umsetzen.
 
 
