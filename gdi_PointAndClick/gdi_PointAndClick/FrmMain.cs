@@ -4,7 +4,7 @@ namespace gdi_PointAndClick
 {
     public partial class FrmMain : Form
     {
-        List<Rectangle> rectangles = new List<Rectangle>();
+        // Todo: Geeignete Datenstrukturen finden.
 
         public FrmMain()
         {
@@ -20,13 +20,11 @@ namespace gdi_PointAndClick
             int h = this.ClientSize.Height;
 
             // Zeichenmittel
+            Pen schwarz = new Pen(Color.Black);
             Brush b = new SolidBrush(Color.Lavender);
 
 
-            for (int i = 0; i < rectangles.Count; i++)
-            {
-                g.FillRectangle(b, rectangles[i]);
-            }
+
 
         }
 
@@ -34,9 +32,6 @@ namespace gdi_PointAndClick
         {
             Point mausposition = e.Location;
 
-            Rectangle r = new Rectangle(mausposition.X, mausposition.Y, 40, 40);
-
-            rectangles.Add(r);  // Kurze Variante: rectangles.Add( new Rectangle(...)  );
 
             Refresh();
         }
@@ -45,7 +40,7 @@ namespace gdi_PointAndClick
         {
             if (e.KeyCode == Keys.Escape)
             {
-                rectangles.Clear();
+ 
                 Refresh();
             }
         }
